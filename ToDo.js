@@ -6,7 +6,7 @@ button.addEventListener('click',()=>{
   if(darkMode === 0) {
     body.style.backgroundColor = "black"
     body.style.color="white"
-    button.innerHTML="Dark"
+    button.innerHTML="Light"
     const localstorageMode = 'DARKMODE'
     localStorage.setItem('mode','DARKMODE')
     darkMode = 1
@@ -14,7 +14,7 @@ button.addEventListener('click',()=>{
   else {
     body.style.backgroundColor="white"
     body.style.color="black"
-    button.innerHTML="Light"
+    button.innerHTML="Dark"
     const localstorageMode = 'LIGHTMODE'
     localStorage.setItem('mode','LIGHTMODE')
     darkMode = 0
@@ -26,12 +26,12 @@ window.addEventListener('load',()=>{
   if (mode === 'DARKMODE'){
     body.style.backgroundColor="black"
     body.style.color="white"
-    button.innerHTML="Dark"
+    button.innerHTML="Light"
   }
   else if(mode === 'LIGHTMODE') {
     body.style.backgroundColor="white"
     body.style.color="black"
-    button.innerHTML="Light"
+    button.innerHTML="Dark"
   }
 })
 
