@@ -9,7 +9,7 @@ document.body.style.color = 'white'
 
 button.addEventListener('click',()=>{
     const userIn = userInput.value 
-  fetch(`http://api.weatherapi.com/v1/current.json?key=159d9ac7c6ba4ef4903150342250502&q=${userIn}&aqi=yes`)
+  fetch(`https://api.weatherapi.com/v1/current.json?key=159d9ac7c6ba4ef4903150342250502&q=${userIn}&aqi=yes`)
   .then(response => response.json())
   .then(data => {
     outputCountry.innerHTML=data.location.region
