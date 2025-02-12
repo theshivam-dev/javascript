@@ -70,7 +70,7 @@ wifiComplain(() => {
       complainResolved(() => {
         complainClosed(() => {
           customerFeedback(() => {
-            console.log('Feedback register !');
+            console.log("Feedback register !");
           });
         });
       });
@@ -79,9 +79,24 @@ wifiComplain(() => {
 });
 
 // ------------------------------------------------------------Aync Await---------------------------------------------------------------
-const asyncFetch = async (url) =>{
-const response = await (await fetch(url)).json()
-console.log(response);
-}
+const asyncFetch = async (url) => {
+  const response = await (await fetch(url)).json();
+  console.log(response);
+};
 
-asyncFetch('https://api.github.com/users/snowdenxedward') 
+asyncFetch("https://api.github.com/users/snowdenxedward");
+
+function fetchData() {
+  return fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
+}
+fetchData();
+
+async function asyncFetchData() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const data = await response.json(); 
+  console.log(data);
+}
+asyncFetchData();
