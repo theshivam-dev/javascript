@@ -7,6 +7,7 @@ const promise = new Promise((resolve, reject) => {
     reject("its reject");
   }
 });
+
 promise
   .then((data) => {
     console.log(data);
@@ -14,6 +15,7 @@ promise
   .catch((err) => {
     console.log(err);
   });
+
 // ------------------------------------------------------------Fetch API---------------------------------------------------------------
 fetch("https://api.github.com/users/torvalds")
   .then((response) => response.json())
@@ -23,6 +25,7 @@ fetch("https://api.github.com/users/torvalds")
   .catch((err) => {
     console.log("this is a error ", err);
   });
+
 // ------------------------------------------------------------CallbackHell---------------------------------------------------------------
 const wifiComplain = (callback) => {
   setTimeout(() => {
@@ -66,12 +69,15 @@ wifiComplain(() => {
     complainProcess(() => {
       complainResolved(() => {
         complainClosed(() => {
-          customerFeedback(() => {});
+          customerFeedback(() => {
+            console.log('Feedback register !');
+          });
         });
       });
     });
   });
 });
+
 // ------------------------------------------------------------Aync Await---------------------------------------------------------------
 const asyncFetch = async (url) =>{
 const response = await (await fetch(url)).json()
